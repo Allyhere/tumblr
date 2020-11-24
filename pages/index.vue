@@ -63,7 +63,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/main.scss';
 
 .tumblr-login {
   display: grid;
@@ -71,7 +70,7 @@ export default {
   height: 100vh;
   width: 100%;
   background-color: $blue;
-  background-image: url('../assets/images/1.jpg');
+  background-image: url('~assets/images/1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
