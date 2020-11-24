@@ -1,0 +1,6 @@
+
+@each $font in map-keys($font-map) {
+ .#{unquote($font)} {
+   @include font-default($font);
+ }
+}
