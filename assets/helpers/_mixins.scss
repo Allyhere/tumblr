@@ -59,3 +59,12 @@
   $darker-color: mix($color-black, $color, 35%);
   box-shadow: 0 0 0 2px $darker-color;
 }
+
+// --------- Transition ----------
+
+// @mixin transition($properties...) {
+//   $transition-list: '';
+//   @each $property in $properties {
+//     append($transition-list, "#{$property} 3s easy-in-out")
+//   }
+// }

@@ -1,5 +1,7 @@
 <template>
   <div class="tumblr-login" ref="main">
+    <div class="heading-1 tumblr-overlay__letter" ref="letter"><h2>C</h2></div>
+    <div class="heading-1 tumblr-overlay__background" ref="overlay"></div>
     <h2 class="logo heading-1">C</h2>
     <ul class="pagination" ref="pagination">
       <li class="pagination__item" >
@@ -35,6 +37,7 @@
 </template>
 
 <script>
+import gsap from 'gsap';
 export default {
   methods: {
     paginate() {
@@ -50,13 +53,34 @@ export default {
 
         pages[i].children[0].classList.add("pagination__item_icon--active");
 
-
         i < 4 ? i++ : i = 0
       }, 5000);
+    },
+    overlay() {
+      const { overlay, letter } = this.$refs;
+      const tl = gsap.timeline({
+        repeat: 0,
+        duration: 4
+      });
 
+      console.log(overlay)
+      tl.to(letter.children[0], {
+        backgroundPosition: "0px 500px",
+        duration: 3,
+      }, 1)
+      tl.to(overlay, {
+        scaleX: 0,
+        duration: 1
+      }, ">")
+      tl.to(letter, {
+        x: "700px",
+        opacity: 0,
+        duration: 1
+      }, "-=1")
     }
   },
   mounted() {
+    this.overlay();
     this.paginate();
   }
 }
@@ -177,6 +201,39 @@ export default {
     place-items: center;
     background-color: $success;
     color: $white;
+  }
+}
+
+.tumblr-overlay {
+  &__background {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transform-origin: right;
+    background-color: $blue;
+  }
+  &__letter {
+    color: $white;
+    font-size: 5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform-origin: right;
+    transform: translate(-50%, -50%);
+    h2 {
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: $gradient-top;
+      background-position: 0 134px;
+      background-size: 100% 500px;
+    }
   }
 }
 </style>

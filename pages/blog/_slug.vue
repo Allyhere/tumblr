@@ -1,6 +1,6 @@
 <template>
    <article>
-    <NuxtLink to="/">Voltar</NuxtLink>
+    <NuxtLink to="/main">Voltar</NuxtLink>
      <h1>{{ article.title }}</h1>
     <p>{{ article.description }}</p>
     <img :src="article.img" :alt="article.alt" />
