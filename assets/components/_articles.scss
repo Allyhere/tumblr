@@ -1,0 +1,108 @@
+.article {
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+  }
+  &__container {
+    background-color: $white;
+    border-radius: $radius-sm;
+    position: relative;
+    @media screen and (max-width: 540px) {
+      border-radius: initial;
+    }
+  }
+  &__header {
+    padding-left: 2ch;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 0;
+    @media screen and (max-width: 966px) {
+      height: 68px;
+    }
+  }
+  &__thumb {
+    border-radius: $radius-sm;
+    object-fit: cover;
+    &--outer {
+      width: 64px;
+      height: 64px;
+      position: sticky;
+      top: 64px;
+      transform: translateX(-50%);
+      @media screen and (max-width: 966px) {
+        display: none;
+      }
+    }
+    &--inner {
+      @media screen and (max-width: 966px) {
+        display: block;
+      }
+      display: none;
+      width: 38px;
+      height: 38px;
+    }
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+  &__options {
+    &-toggle {
+      background: transparent;
+      padding: 2ch;
+      cursor: pointer;
+    }
+    &-container {
+      padding-right: 2ch;
+    }
+    &-list {
+      box-shadow: $shadow-lg;
+      position: absolute;
+      top: 55px;
+      right: 2ch;
+      width: 250px;
+      background-color: $white;
+      border-radius: $radius-sm;
+      text-align: center;
+      &__item {
+        padding-block: 1.5ch;
+        transition: background 0.3s ease-in-out;
+        color: $black;
+        &:not(:first-child) {
+          cursor: pointer;
+          font-weight: 600;
+        }
+        &:hover {
+          background-color: $lightgrey;
+        }
+      }
+    }
+  }
+
+  &__main {
+    & > *:not(.article__image-link) {
+      padding-left: 2ch;
+    }
+  }
+  &__image {
+    max-width: 100%;
+    width: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    &-link {
+      width: auto;
+      height: fit-content;
+      display: block;
+      margin-bottom: 1.5ch;
+    }
+  }
+  &__footer {
+    padding: 2ch 0 2ch 2ch;
+  }
+}

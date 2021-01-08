@@ -1,8 +1,8 @@
 <template>
    <article>
     <NuxtLink to="/main">Voltar</NuxtLink>
-     <h1>{{ article.title }}</h1>
-    <p>{{ article.description }}</p>
+    <h2 class="heading-2">{{ article.title }}</h2>
+    <p class="text">{{ article.description }}</p>
     <img :src="article.img" :alt="article.alt" />
     <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
     <nav>
@@ -12,7 +12,6 @@
         </li>
       </ul>
     </nav>
-
     <nuxt-content :document="article" />
   </article>
 </template>

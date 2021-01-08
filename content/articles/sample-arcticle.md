@@ -1,7 +1,12 @@
 ---
 title: My first Blog Post
-description: Learning how to use @nuxt/content to create a blog lorem oiasjdoiasjdoiajsdoaisjdoiasjdoi oiajsdoiajsd oiasjdoiasjd aosijdasiojd aosidjaosijd
-img: my-first.png
+description: Learning how to nutttt in da asss
+tags: post life
+author:
+  name: Camilo Micheletto
+  bio: Gostoso
+  img: camilo.jpg
+img: https://source.unsplash.com/random
 alt: my first blog post
 ---
 
